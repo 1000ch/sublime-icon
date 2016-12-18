@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-
 const argv = require('minimist')(process.argv.slice(2), {
   alias: {
     v: 'version',
@@ -14,6 +12,8 @@ if (argv.v || argv.version) {
   return;
 }
 
+
+const fs = require('fs');
 if (argv.h || argv.help) {
   fs.createReadStream(`${__dirname}/usage.txt`)
     .pipe(process.stdout)
@@ -21,12 +21,24 @@ if (argv.h || argv.help) {
   return;
 }
 
-const ora = require('ora');
-const spinner = ora('Setting Sublime Text icon').start();
-const sublimeicon = require('./');
+const trash = require('trash');
+const userHome = require('user-home');
+const spinner = require('ora')('Setting Sublime Text icon').start();
+const sublimeIcon = require('./');
 
 const t32k = `${__dirname}/icons/t32k.icns`;
 
-sublimeicon(t32k)
+sublimeIcon(t32k)
+  .then(() => {
+    spinner.succeed();
+    spinner.text = 'Clearing icon caches';
+    spinner.start();
+
+    return trash([
+      `${userHome}/Library/Caches/com.apple.dock.iconcache`,
+      `${userHome}/Library/Caches/com.apple.iconservices`,
+      `${userHome}/Library/Caches/com.apple.finder`
+    ]);
+  })
   .then(() => spinner.succeed())
   .catch(error => spinner.fail());

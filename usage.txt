@@ -1,0 +1,5 @@
+usage: sublime-icon
+
+options
+  --help, -h Output help
+  --version, -v Output version

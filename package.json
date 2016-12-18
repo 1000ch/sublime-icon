@@ -1,0 +1,32 @@
+{
+  "name": "sublime-icon",
+  "version": "0.0.0",
+  "description": "Utility for Sublime Text to set or replace its icon",
+  "scripts": {
+    "postversion": "git push && git push --tags"
+  },
+  "bin": {
+    "sublime-icon": "cli.js"
+  },
+  "repository": "1000ch/sublime-icon",
+  "keywords": [
+    "sublimetext",
+    "icon"
+  ],
+  "author": {
+    "name": "1000ch",
+    "email": "shogo.sensui@gmail.com",
+    "web": "https://github.com/1000ch"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1000ch/sublime-icon/issues"
+  },
+  "homepage": "https://github.com/1000ch/sublime-icon#readme",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "ora": "^0.4.0",
+    "rimraf": "^2.5.4",
+    "tempfile": "^1.1.1"
+  }
+}

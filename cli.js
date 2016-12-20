@@ -23,6 +23,7 @@ if (argv.h || argv.help) {
 
 const trash = require('trash');
 const userHome = require('user-home');
+const userCache = `${userHome}/Library/Caches`;
 const spinner = require('ora')('Setting Sublime Text icon').start();
 const sublimeIcon = require('./');
 
@@ -35,9 +36,9 @@ sublimeIcon(t32k)
     spinner.start();
 
     return trash([
-      `${userHome}/Library/Caches/com.apple.dock.iconcache`,
-      `${userHome}/Library/Caches/com.apple.iconservices`,
-      `${userHome}/Library/Caches/com.apple.finder`
+      `${userCache}/com.apple.dock.iconcache`,
+      `${userCache}/com.apple.iconservices`,
+      `${userCache}/com.apple.finder`
     ]);
   })
   .then(() => spinner.succeed())

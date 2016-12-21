@@ -1,5 +1,6 @@
 usage: sublime-icon
 
 options
-  --help, -h Output help
   --version, -v Output version
+  --help, -h Output help
+  --icon, -i Specify the icon path to set

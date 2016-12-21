@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/1000ch/sublime-icon#readme",
   "dependencies": {
+    "inquirer": "^2.0.0",
     "minimist": "^1.2.0",
     "ora": "^0.4.0",
     "rimraf": "^2.5.4",

@@ -2,6 +2,10 @@
 
 Utility for Sublime Text to set or replace its icon.
 
+[![Build Status](https://travis-ci.org/1000ch/sublime-icon.svg?branch=master)](https://travis-ci.org/1000ch/sublime-icon)
+[![Dependency Status](https://david-dm.org/1000ch/sublime-icon.svg)](https://david-dm.org/1000ch/sublime-icon)
+[![devDependency Status](https://david-dm.org/1000ch/sublime-icon/dev-status.svg)](https://david-dm.org/1000ch/sublime-icon?type=dev)
+
 ## Install
 
 ```bash

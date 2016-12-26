@@ -16,7 +16,7 @@ const argv = require('minimist')(process.argv.slice(2), {
 });
 
 if (argv.v || argv.version) {
-  process.stdout.write(require('./package').version);
+  console.log(require('./package').version);
   return;
 }
 

@@ -15,17 +15,17 @@ $ npm install -g sublime-icon
 ## Usage
 
 ```bash
-# Select the icon interactively
-$ sublime-icon
+Usage
+  $ sublime-icon
 
-# Show sublime-icon version
-$ sublime-icon --version
+Options
+  --version, -v Output version
+  --help, -h Output help
+  --icon, -i Specify the icon path to set
 
-# Show sublime-icon help
-$ sublime-icon --help
-
-# Specify the icon path to set
-$ sublime-icon --icon=/path/to/icon.icns
+Examples
+  $ sublime-icon
+  $ sublime-icon --icon=path/to/icon.icns
 ```
 
 ## Icons

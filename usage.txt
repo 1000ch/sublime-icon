@@ -1,6 +1,11 @@
-usage: sublime-icon
+Usage
+  $ sublime-icon
 
-options
+Options
   --version, -v Output version
   --help, -h Output help
   --icon, -i Specify the icon path to set
+
+Examples
+  $ sublime-icon
+  $ sublime-icon --icon=path/to/icon.icns

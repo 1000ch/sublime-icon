@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-const inquirer = require('inquirer');
-const trash = require('trash');
-const userHome = require('user-home');
+const execa = require('execa');
+const fkill = require('fkill');
 const ora = require('ora');
+const inquirer = require('inquirer');
 const sublimeIcon = require('./');
 
 const argv = require('minimist')(process.argv.slice(2), {
@@ -29,19 +29,18 @@ if (argv.h || argv.help) {
 
 const setIcon = (icon) => {
   const spinner = ora('Setting Sublime Text icon').start();
-  const userCache = `${userHome}/Library/Caches`;
 
   return sublimeIcon(icon).then(() => {
     spinner.succeed();
     spinner.text = 'Clearing icon caches';
     spinner.start();
 
-    return trash([
-      `${userCache}/com.apple.dock.iconcache`,
-      `${userCache}/com.apple.iconservices`,
-      `${userCache}/com.apple.finder`
+    return execa('touch', [
+      '\/Applications/Sublime\ Text.app',
+      '\/Applications/Sublime\ Text.app\/Contents\/Info.plist'
     ]);
-  }).then(() => spinner.succeed())
+  }).then(() => fkill('Dock'))
+    .then(() => spinner.succeed())
     .catch(error => spinner.fail());
 };
 

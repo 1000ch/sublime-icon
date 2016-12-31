@@ -5,6 +5,7 @@ const execa = require('execa');
 const fkill = require('fkill');
 const ora = require('ora');
 const inquirer = require('inquirer');
+const icons = require('./icons');
 const sublimeIcon = require('./');
 
 const argv = require('minimist')(process.argv.slice(2), {
@@ -47,14 +48,10 @@ const setIcon = (icon) => {
 if (argv.i || argv.icon) {
   return setIcon(argv.i || argv.icon);
 } else {
-  const iconMap = {
-    t32k: `${__dirname}/icons/t32k.icns`
-  };
-
   return inquirer.prompt([{
     type: 'list',
     name: 'icon',
     message: 'Select icon',
-    choices: Object.keys(iconMap)
-  }]).then(answer => setIcon(iconMap[answer.icon]));
+    choices: Object.keys(icons)
+  }]).then(answer => setIcon(icons[answer.icon]));
 }

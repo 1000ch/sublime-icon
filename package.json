@@ -1,6 +1,6 @@
 {
   "name": "sublime-icon",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Utility for Sublime Text to set or replace its icon",
   "scripts": {
     "postversion": "git push && git push --tags"

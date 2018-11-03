@@ -8,6 +8,9 @@
   "bin": {
     "sublime-icon": "cli.js"
   },
+  "engines": {
+    "node": ">=6"
+  },
   "repository": "1000ch/sublime-icon",
   "keywords": [
     "sublimetext",
@@ -24,11 +27,11 @@
   },
   "homepage": "https://github.com/1000ch/sublime-icon#readme",
   "dependencies": {
-    "execa": "^0.9.0",
+    "execa": "^1.0.0",
     "fkill": "^5.2.0",
-    "inquirer": "^5.1.0",
+    "inquirer": "^6.2.0",
     "minimist": "^1.2.0",
-    "ora": "^2.0.0",
+    "ora": "^3.0.0",
     "tempy": "^0.2.1"
   }
 }
